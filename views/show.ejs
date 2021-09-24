@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%=sneakers.name %></title>
+        <link rel="stylesheet" href="/css/show.css">
+    </head>
+    <body>
+        <header>
+            <%- include ('./partials/head.ejs') %>
+        </header>
+        <div class="nav">
+            <%if (currentUser) { %>
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <a href="/nike"class="login" >Welcome <%=currentUser.username%> |</a>
+                    <input class="logout" type="submit" class="login" value="Log Out">
+                </form>
+            <% } else {%>
+                <a class="home" href="/">Home |</a>
+                <a class="login" href="/users/login">Join Us |</a>
+                <a class="login" href="/sessions/login">Sign In</a>
+            <% } %>
+        </div>
+        <div class="container-master">
+                <form method="POST">
+                    <div class="container">
+                        <div class="sub-container1">
+                            <h3><%=sneakers.name %></h3>
+                            <img src="<%=sneakers.img%>"/>
+                        </div>
+                        <div class="sub-container2">
+                            <h3>$<%=sneakers.price%>.00</h3>
+                            <div>
+                            <%if(sneakers.quantity >= 1) {%>
+                                <input type="submit" value="BUY NOW" formaction="/nike/<%=id%>/<%=sneakers.quantity%>?_method=PUT">
+                                <p class="value"><%=sneakers.quantity%> remaining</p>
+                            <%} else {%>
+                                <a type="button" class="out" style="background-color: red; color: seashell;">OUT OF STOCK</a>
+                           <% }  %>
+                            </div>
+                            <p><%=sneakers.description%></p>
+                        </div>
+                    </div>
+                </div>
+                <nav>
+                    <% if (currentUser) { %>
+                        <a class="first" href="/nike">BACK</a>
+                    <% } %>
+                    <% if (currentUser) { %>
+                        <a class="second" href="/nike/<%=sneakers.id%>/edit">EDIT</a>
+                        <input class="del" formaction="/nike/<%=id%>?_method=DELETE"" type="submit" value="DELETE"/>
+                    <% } %>
+                </nav>
+            </form> 
+        </div>
+        <%- include ('./partials/footer.ejs') %>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+</html>

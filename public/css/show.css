@@ -1,0 +1,179 @@
+body{
+    font-family: 'DM Serif Display', serif;
+    margin: 0;
+}
+form{
+    display: flex;
+    justify-content: center;
+}
+.circle{
+    opacity: 0.5;
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    margin: -300px auto;
+    z-index: -1;
+    border-radius: 50%;
+    background-color: #eee;
+}
+header{
+    padding-top: 2.5px;
+    display: flex;
+    justify-content: center;
+}
+header > div > img {
+    width: 35%;
+}
+header > div{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    border-radius: 32px;         
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: #666;
+    height: 7vh;
+    left: 45%;
+}
+.container{
+    display: inline-flex;
+    justify-content: center;
+    width: 50%;
+    height: 400px;
+    background-color: #f6f6f6;
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 0px 32px 0px 32px;
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.container-master{
+    display: flex;
+    justify-content: center;
+}
+.sub-container1{
+    text-align:center;
+    width: 50%;
+}
+.sub-container2{
+    align-items: center;
+    width: 50%;
+}
+.sub-container1 > img{
+    width: 80%;
+}
+.sub-container1 > h3{
+    text-align: center;
+}
+.sub-container2 > div{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sub-container2 > div > p{
+    margin: 0;
+}
+h3{
+    margin-top: 0;
+    font-size: 1.3em;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.sub-container2 > div > a + p{
+    margin-left: 2%;
+}
+.sub-container2 > div > input{
+  background: #000;
+  color: #fff;
+}
+.sub-container2 > div > input:hover{
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+p{
+    padding: 10px 15px;
+    font-size: 1em;
+}
+nav{
+    text-align: center;
+    margin-top: 10px ;
+}
+button{
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 32px  ;
+    background-color: #eee;
+    color: #333;
+    border: 0;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.1);
+}
+a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 32px;
+    background-color: #eee;
+    color: #333;
+    border: 0;
+}
+a:hover{
+    background: #000;
+    color: #fff;
+}
+input{
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 32px  ;
+    background-color: #eee;
+    color: #333;
+    border: 0;
+}
+input:hover{ 
+    background: red;
+    color: #fff;
+}
+.first{
+    border-radius: 32px 0px 0px 32px;
+}
+.second{
+    border-radius: 0;
+}
+.del{
+    border-radius: 0px 32px 32px 0px;
+}
+.del:hover{
+    cursor: pointer;
+}
+button:hover{
+    cursor: pointer;
+}
+.nav{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+.nav > a, .nav > input{
+    background: #f7f7f7;
+    padding: 0;
+    letter-spacing: 1px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #000;
+}
+form > .login, form > .logout{
+    background: #f7f7f7;
+    padding: 0;
+    letter-spacing: 1px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #000;
+
+}

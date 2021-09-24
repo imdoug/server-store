@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>INDEX</title>
+    </head>
+    <link rel="stylesheet" href="/css/index.css">
+    <body>
+        <header>
+            <%- include ('./partials/head.ejs') %>
+        </header>
+        <div class="nav">
+        <%if (currentUser) { %>
+            <form action="/sessions?_method=DELETE" method="POST">
+                <a href="/nike"class="login" >Welcome <%=currentUser.username%> |</a>
+                <input class="logout" type="submit" class="login" value="Log Out">
+            </form>
+        <% } else {%>
+            <a class="home" href="/">Home |</a>
+            <a class="login" href="/users/login">Join Us |</a>
+            <a class="login" href="/sessions/login">Sign In</a>
+        <% } %>
+        </div>
+        <div class="container">
+            <% for(let i = 0; i < sneakers.length; i++){ %>
+                <div class="div<%=i%>">
+                    <a type="button" href="/nike/<%=sneakers[i].id%>">
+                       <h4><%=sneakers[i].name%></h4>
+                          <img src="<%=sneakers[i].img%>"/>
+                       <p>$<%=sneakers[i].price%>.00</p>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+        <% if(currentUser) {%>
+        <nav>
+            <a href="/nike/new">CREATE NEW SNEAKER</a>
+        </nav>
+        <% } %>
+        <%- include ('./partials/footer.ejs') %>
+    </body>
+</html>

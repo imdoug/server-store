@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>LOGIN PAGE</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+            body{
+                font-family: 'DM Serif Display', serif;
+            }
+            .circle{
+                opacity: 0.5;
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                margin: -300px auto;
+                z-index: -1;
+                border-radius: 50%;
+                background-color: #eee;
+            }
+            header{
+                padding-top: 10px;
+                display: flex;
+                justify-content: center;
+            }
+            header > div > img {
+                width: 35%;
+            }
+            header > div{
+                display: flex;
+                justify-content: center;
+                width: 40%;
+                border-radius: 32px;         
+            }
+            .footer{
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                color: #666;
+                height: 13vh;
+                left: 45%;
+            }
+            div.container-master{
+                display: flex;
+                justify-content: center;
+                margin-top: 10%;
+            }
+            .container{
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            input + a {
+                margin-left: 2px;
+            }
+            a{ 
+                letter-spacing: 1px;
+                padding: 10px 15px;
+                font-size: 1em;
+                border-radius: 0px 32px 32px 0px ;
+                background-color: #eee;
+                color: #333;
+                text-decoration: none;
+            }
+            .signup{
+                letter-spacing: 1px;
+                padding: 10px 15px;
+                font-size: 1em;
+                border-radius: 32px 0px 0px 32px ;
+                background-color: #eee;
+                color: #333;
+                text-decoration: none;
+                border: 0px;
+                font-family: 'DM Serif Display', serif;
+            }
+            a:hover{
+                background: #000;
+                color: white;
+            }
+            .signup:hover{
+                background: #000;
+                color: white;
+                cursor: pointer;
+            }
+            table{
+                font-family: 'DM Serif Display', serif;
+                padding: 20px;
+                background: #fff;
+                border-radius: 0px 32px 0px 32px;
+                font-size: 1.3em;
+                box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.2);
+            }
+            td > input{
+                border-radius: 32px;
+                padding: 3px;
+                border: 0;
+                background: #eee;
+                padding-inline-start: 10px;
+                outline: none;
+            }
+            h4{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <%- include ('../partials/head.ejs') %>
+        </header>
+        <h4>Sign In</h4>
+        <div class="container-master">   
+            <form action="/sessions" method="POST">
+                <table>
+                    <tr>
+                        <td>Username:</td>
+                        <td><input type="text" name="username" placeholder="username"/></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="password" placeholder="password"/></td>
+                    </tr>
+                    <tr>
+                </table>
+                <div class="container">
+                    <input class="signup"type="submit" value="SIGN UP"/>
+                    <a href="/nike">CANCEL</a>
+                </div>
+            </form>
+        </div>
+        <%- include ('../partials/footer.ejs') %>
+    </body>
+</html> 

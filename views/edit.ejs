@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>EDIT</title>
+        <link rel="stylesheet" href="/css/edit.css">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <%- include ('./partials/head.ejs') %>
+        </header>
+        <h1>Edit Sneaker</h1>
+        <h3><%=sneakers.name%></h3>
+        <div class="container-master">
+                    <form action="/nike/<%=id%>?_method=PUT" method="POST">
+                        <div class="card">
+                            <table>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td><input type="text" name="name" value="<%=sneakers.name%>"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Description:</td>
+                                    <td><input type="text" name="description" value="<%=sneakers.description%>"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Image:</td>
+                                    <td><input type="text" name="img" value="<%=sneakers.img%>"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Price:</td>
+                                    <td><input type="text" name="price" value="<%=sneakers.price%>"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Quantity:</td>
+                                    <td><input type="text" name="quantity" value="<%=sneakers.quantity%>"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <input type="submit" class="create" value="SAVE"/>
+                        <a href="/nike">CANCEL</a>
+                    </form>
+            </div>
+        <%- include ('./partials/footer.ejs') %>
+    </body>
+</html>
