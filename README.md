@@ -1,9 +1,9 @@
 # server-store
-A server-side store application using Nike products as inpiration for the project 
+A server-side store application using Nike products as inspiration for the project 
 
-#### Funtionalities 
+#### Functionalities 
 
-1. Users can buy sneakers, and for each click it will drecrease the ramainning quantity of that sneaker
+1. Users can buy sneakers, and for each click it will decrease the remaining quantity of that sneaker
 2. Sign in and Sign up functionality 
 3. After the users have been authenticated they can:
 
@@ -23,5 +23,3 @@ A server-side store application using Nike products as inpiration for the projec
 8. EJS
 
 ###### live project : https://server-nike-store.herokuapp.com/nike
-
- 
