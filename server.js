@@ -19,11 +19,15 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+
+app.use( express.static('public'))
+
+app.use(express.urlencoded({extended: false}))
+app.use(express.json());
+
 app.use( methodOverride('_method'))
-app.use(express.urlencoded({extended:true}))
 app.use('/users', userControllers)
 app.use('/sessions', sessionsController)
-app.use( express.static('public'))
 
 // DATABASE
 mongoose.connect(
@@ -41,6 +45,7 @@ mongoose.connect(
 
 db.on('error', err => console.log(err.message + ' is mongod not running?'))
 db.on('disconnected', () => console.log('mongo disconnected'))
+app.use(express.static('public'));
 
   const nikeControllers = require('./controllers/nike_controllers.js')
   app.use('/nike', nikeControllers)
