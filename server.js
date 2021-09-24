@@ -9,8 +9,8 @@ const sessionsController = require('./controllers/session_controllers.js')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
-const PORT = process.env.PORT
-const mongodbURI = process.env.MONGODBURI
+const PORT = process.env.PORT || 3003
+const MONGODB_URI = process.env.MONGODB_URI;
 
 //MIDDLEWARE
 
@@ -27,7 +27,7 @@ app.use( express.static('public'))
 
 // DATABASE
 mongoose.connect(
-    mongodbURI,
+  MONGODB_URI,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -35,7 +35,7 @@ mongoose.connect(
       useCreateIndex: true,
     },
     () => {
-      console.log('the connection with mongod is established at', mongodbURI)
+      console.log('the connection with mongod is established at', MONGODB_URI)
     }
   )
 

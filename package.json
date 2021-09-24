@@ -1,5 +1,8 @@
 {
   "name": "mongoose_store",
+  "engines": {
+    "node": "v14.17.1"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
